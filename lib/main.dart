@@ -56,6 +56,7 @@ class _ContactListScreenState extends State<ContactListScreen> {
             IconButton(
               icon: Icon(Icons.delete, color: Colors.red),
               onPressed: () {
+
                 setState(() {
                   contacts.removeAt(index);
                 });
@@ -67,6 +68,10 @@ class _ContactListScreenState extends State<ContactListScreen> {
       },
     );
   }
+  MySnackBar(message,context){
+    return ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message)));
+  }
+
 // Define a reusable button style
   final ButtonStyle buttonStyle = ElevatedButton.styleFrom(
     backgroundColor: Colors.blueGrey,
@@ -137,6 +142,7 @@ class _ContactListScreenState extends State<ContactListScreen> {
                 itemBuilder: (context, index)
 
                 {
+
                   return Container(
                       margin: EdgeInsets.symmetric(vertical: 4), // Adds spacing between items
                   decoration: BoxDecoration(
